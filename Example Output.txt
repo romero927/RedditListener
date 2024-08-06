@@ -1,0 +1,86 @@
+Process Started: 8/6/2024 11:22:11 PM +00:00
+Press ESC to stop
+
+#######################
+Subreddit: askreddit
+-----------------------
+Number of Threads: 2
+Delay Between Requests: 10 seconds
+Request Limit Used: 65
+Request Limit Remaining: 35
+Request Limit Reset: 203 seconds
+-----------------------
+Top 5 Posts:
+-----------------------
+Title: What do you think of the recent popularity of the insult "Weird"?
+Upvotes: 3
+Author: BlackHorseTuxedo
+Created UTC: 8/6/2024 11:28:14 PM +00:00
+Post ID: 1elwmj6
+Permalink: /r/AskReddit/comments/1elwmj6/what_do_you_think_of_the_recent_popularity_of_the/
+
+Title: Groomsmen, what are some of the best and worst gifts you've received from the groom?
+Upvotes: 3
+Author: rubberslippers
+Created UTC: 8/6/2024 11:26:24 PM +00:00
+Post ID: 1elwl1m
+Permalink: /r/AskReddit/comments/1elwl1m/groomsmen_what_are_some_of_the_best_and_worst/
+
+Title: What are some words that rhyme with porn?
+Upvotes: 2
+Author: MusicSufficient2652
+Created UTC: 8/6/2024 11:31:32 PM +00:00
+Post ID: 1elwp5w
+Permalink: /r/AskReddit/comments/1elwp5w/what_are_some_words_that_rhyme_with_porn/
+
+Title: What's the best meal out you've ever had?
+Upvotes: 1
+Author: gibgod
+Created UTC: 8/6/2024 11:36:14 PM +00:00
+Post ID: 1elwsxv
+Permalink: /r/AskReddit/comments/1elwsxv/whats_the_best_meal_out_youve_ever_had/
+
+Title: How often do you keep in touch with your high school circle?
+Upvotes: 1
+Author: elasticsearch_help
+Created UTC: 8/6/2024 11:35:40 PM +00:00
+Post ID: 1elwsha
+Permalink: /r/AskReddit/comments/1elwsha/how_often_do_you_keep_in_touch_with_your_high/
+
+-----------------------
+Top 5 Authors with Most Posts:
+-----------------------
+Author: elasticsearch_help
+# Posts: 2
+
+Author: gibgod
+# Posts: 1
+
+Author: speed150mph
+# Posts: 1
+
+Author: CasualVictim
+# Posts: 1
+
+Author: GapingAssTroll
+# Posts: 1
+
+-----------------------
+
+#######################
+Subreddit: funny
+-----------------------
+Number of Threads: 2
+Delay Between Requests: 10 seconds
+Request Limit Used: 66
+Request Limit Remaining: 34
+Request Limit Reset: 203 seconds
+-----------------------
+Top 5 Posts:
+-----------------------
+NO POSTS YET, PLEASE STAND BY
+-----------------------
+Top 5 Authors with Most Posts:
+-----------------------
+NO AUTHORS YET, PLEASE STAND BY
+-----------------------
