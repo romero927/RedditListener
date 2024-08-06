@@ -18,6 +18,10 @@ Your app should also provide some way to report these values to a user (periodic
   -- After each capture, loop through posts and ID count post per user
   -- Display current top posts and current user post counts
 
+# Project Links
+- Configuration: https://github.com/romero927/RedditListener/blob/main/RedditListener/Configuration.cs
+- Program.cs: https://github.com/romero927/RedditListener/blob/main/RedditListener/Program.cs
+
 # Reddit API Links
 - https://github.com/reddit-archive/reddit/wiki/OAuth2
 - https://support.reddithelp.com/hc/en-us/articles/16160319875092-Reddit-Data-API-Wiki
