@@ -47,8 +47,7 @@
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAnAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-06T17:36:38.261Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -58,7 +57,7 @@
               "RelativeDocumentMoniker": "RedditListener\\Program.cs",
               "ToolTip": "C:\\Users\\Kyle\\source\\repos\\RedditListener\\RedditListener\\Program.cs",
               "RelativeToolTip": "RedditListener\\Program.cs",
-              "ViewState": "AQIAAMcAAAAAAAAAAAAuwNoAAAAxAAAA",
+              "ViewState": "AQIAAMcAAAAAAAAAAAAuwNwAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-06T15:59:41.948Z",
               "IsPinned": true,
@@ -74,8 +73,7 @@
               "RelativeToolTip": "RedditListener\\classes\\RedditNewReturnObject.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAADAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-06T20:19:01.54Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-06T20:19:01.54Z"
             },
             {
               "$type": "Document",
@@ -87,8 +85,7 @@
               "RelativeToolTip": "RedditListener\\classes\\RedditPost.cs",
               "ViewState": "AQIAAJwAAAAAAAAAAAAhwKQAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-06T17:59:22.132Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-06T17:59:22.132Z"
             },
             {
               "$type": "Document",
@@ -100,8 +97,7 @@
               "RelativeToolTip": "RedditListener\\classes\\RedditPostSummary.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAlAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-06T18:13:53.754Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-06T18:13:53.754Z"
             },
             {
               "$type": "Document",
@@ -113,8 +109,7 @@
               "RelativeToolTip": "RedditListener\\Configuration.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-06T21:44:57.553Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-06T21:44:57.553Z"
             }
           ]
         }
