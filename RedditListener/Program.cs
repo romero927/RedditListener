@@ -1,4 +1,4 @@
-﻿
+﻿//System Includes
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Runtime.CompilerServices;
@@ -33,8 +33,9 @@ static async Task MainApp()
 
     //Get the Reddit Token
     string TokenJSON = await PostForRedditToken(client);
-    RedditToken Token = JsonSerializer.Deserialize<RedditToken>(TokenJSON);
-    client.DefaultRequestHeaders.Add("access_token", Token.access_token);
+    RedditToken? Token = JsonSerializer.Deserialize<RedditToken>(TokenJSON);
+    if(Token is not null)
+        client.DefaultRequestHeaders.Add("access_token", Token.access_token);
 
     do
     {
@@ -82,7 +83,7 @@ static async Task MainApp()
 
 
                     //Output the Top Posts data to console in a readable format
-                    if (ReturnedData.PostSummaries.Count > 0)
+                    if (ReturnedData is not null && ReturnedData.PostSummaries.Count > 0)
                     {
                         foreach (RedditPostSummary PostSummary in ReturnedData.PostSummaries)
                         {
@@ -134,7 +135,7 @@ static async Task MainApp()
 
             //Clear console for next display, and add a tiny delay to make sure there are no weird display artifacts
             Console.Clear();
-            Thread.Sleep(500);
+            Thread.Sleep(1000);
         }
         //Continue until escape key is pressed
     } while (Console.ReadKey(true).Key != ConsoleKey.Escape);
@@ -173,7 +174,7 @@ static async Task<RedditNewReturnObject> ProcessRedditNewAsync(HttpClient client
     string json = await response.Content.ReadAsStringAsync();
 
     //Deserialize JSON into Object to contain posts
-    Root NewPostsCollection = JsonSerializer.Deserialize<Root>(json);
+    Root? NewPostsCollection = JsonSerializer.Deserialize<Root>(json);
 
     //New List that we will use to truncate any data we dont need for posts and sort
     List<RedditPostSummary> PostSummaries = new List<RedditPostSummary>();
@@ -185,7 +186,7 @@ static async Task<RedditNewReturnObject> ProcessRedditNewAsync(HttpClient client
     foreach (RedditPost Post in NewPostsCollection.data.children)
     {
         //If post was created after the app started, it is in play
-        if (Post.data.created_utc >= startTimeUTC)
+        if (Post.data.created_utc is not null && Post.data.created_utc >= startTimeUTC)
         {
             RedditPostSummary PostSummary = new RedditPostSummary();
             PostSummary.title = Post.data.title;
@@ -196,16 +197,24 @@ static async Task<RedditNewReturnObject> ProcessRedditNewAsync(HttpClient client
             PostSummary.url = Post.data.permalink;
 
             PostSummaries.Add(PostSummary);
-            if (AuthorCounts.ContainsKey(Post.data.author))
-                AuthorCounts[Post.data.author]++;
-            else AuthorCounts.Add(Post.data.author, 1);
+
+            if (AuthorCounts is not null && Post.data.author is not null)
+            {
+                if (AuthorCounts.ContainsKey(Post.data.author))
+                    AuthorCounts[Post.data.author]++;
+                else AuthorCounts.Add(Post.data.author, 1);
+            }
         }
     }
+
     //Order post summaries descending, and take configured top number
     PostSummaries = PostSummaries.OrderByDescending(p => p.upvotes).Take(config.NumberOfPostsToTrack).ToList();
 
     //Order author counts descending, and take configured top number
-    Dictionary<string, int> sortedAuthors = AuthorCounts.OrderByDescending(pair => pair.Value).Take(config.NumberOfAuthorsToTrack)
+    Dictionary<string, int> sortedAuthors = new Dictionary<string, int>();
+    
+    if(AuthorCounts is not null)
+        sortedAuthors = AuthorCounts.OrderByDescending(pair => pair.Value).Take(config.NumberOfAuthorsToTrack)
                .ToDictionary(pair => pair.Key, pair => pair.Value);
 
     //Build our return object from this task and return it.

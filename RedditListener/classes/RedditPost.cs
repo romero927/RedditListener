@@ -14,12 +14,12 @@ public class RedditPost
 
 public class Data
 {
-    public string title { get; set; }
-    public int ups { get; set; }
-    public string id { get; set; }
-    public string author { get; set; }
-    public string permalink { get; set; }
-    public double created_utc { get; set; }
+    public string? title { get; set; }
+    public int? ups { get; set; }
+    public string? id { get; set; }
+    public string? author { get; set; }
+    public string? permalink { get; set; }
+    public double? created_utc { get; set; }
     public List<RedditPost>? children { get; set; }
 
     //Unused parameters commented out to save memory.

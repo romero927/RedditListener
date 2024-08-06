@@ -5,8 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 public class RedditNewReturnObject
 {
-   public List<RedditPostSummary> PostSummaries { get; set; }
-   public Dictionary<string, int> AuthorCounts { get; set; }
+   public List<RedditPostSummary>? PostSummaries { get; set; }
+   public Dictionary<string, int>? AuthorCounts { get; set; }
    public int NumberOfPostsToTrack {  get; set; }
    public int NumberOfAuthorsToTrack {  get; set; }
    public int xratelimitused { get; set; }

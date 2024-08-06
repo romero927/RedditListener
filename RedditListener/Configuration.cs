@@ -14,10 +14,10 @@ internal class Configuration
     public readonly string[] SubRedditsToMonitor =
             {
                 "funny",
-                "askreddit",
-                "gaming",
-                "worldnews",
-                "todayilearned"
+                "askreddit"
+                //"gaming",
+                //"worldnews",
+                //"todayilearned"
             };
     //How many posts do I want to show for each subreddit? (Top #)
     public readonly int NumberOfPostsToTrack = 5;
