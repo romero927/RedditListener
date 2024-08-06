@@ -28,8 +28,10 @@ Your app should also provide some way to report these values to a user (periodic
 - X-Ratelimit-Remaining: Approximate number of requests left to use
 - X-Ratelimit-Reset: Approximate number of seconds to end of period
 
-# Known Issues
+# Future Concerns
 - Due to the async multhreaded nature of the HTTPS requests, the console output can sometimes get out of order. This would not be an issue in a DB or File save.
 - I built this for .NET 8, but couldn't find a way to add unit tests for this, I was maxed out at .NET 4.8 for the unit test project. Unit tests are the first thing I would go back and fix if able.
 - I have run this for 30 mins and it was stable, but I haven't checked long term stability that would be needed for production
 - If there is an error, the app will continue working with basic error handling. A real app would need much more in-depth checking.
+- The only sorting criteria for Posts is # of Upvotes and Authors is # of Posts, so if there are multiple posts / authors with the same numbers, the display will be arbitrary. We would need to determine what additional filtering / sorting is desired.
+- The Top Posts and Top Authors are calculated from the overall dataset and may not correlate after sorting / filtering. For instance, the Top Posting author may be spamming low upvoted posts and may not have anything in the Top posts section.
