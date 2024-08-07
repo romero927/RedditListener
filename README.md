@@ -35,6 +35,9 @@ Your app should also provide some way to report these values to a user (periodic
 - X-Ratelimit-Reset: Approximate number of seconds to end of period
 
 # Future Concerns
+- I added two operation modes, new and top. You can select this in the config file. I default it to top.
+  - new = Look at all posts made from the point that the app was started and calculate the top NumberOfPostsToTrack and NumberOfAuthorsToTrack from those posts. This uses the new.json listing and will page backwards through the listing data slices until it finds the first post that was created after start.Time between requests will slow down over time as the number of pages you have to go through increases, as each page uses a request.
+   - top = Look at the top posts listing and calculate the top NumberOfPostsToTrack and NumberOfAuthorsToTrack from those posts. Looks at current top 100. More memory and request stable.
 - Due to the async multhreaded nature of the HTTPS requests, the console output can sometimes get out of order, especially on the first display. It resolves quickly and would not be an issue in a DB or File save.
 - I built this for .NET 8, but couldn't find a way to add unit tests for this, I was maxed out at .NET 4.8 for the unit test project. Unit tests are the first thing I would go back and fix if able.
 - I have run this for 30 mins and it was stable, but I haven't checked long term stability that would be needed for production
