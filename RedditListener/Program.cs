@@ -80,6 +80,7 @@ static async Task MainApp()
                     Console.WriteLine("Request Limit Used: " + ReturnedData.xratelimitused);
                     Console.WriteLine("Request Limit Remaining: " + ReturnedData.xratelimitremaining);
                     Console.WriteLine("Request Limit Reset: " + ReturnedData.xratelimitreset + " seconds");
+                    Console.WriteLine("");
                     Console.WriteLine("-----------------------");
                     Console.WriteLine("Top " + ReturnedData.NumberOfPostsToTrack + " Posts:");
                     Console.WriteLine("-----------------------");
