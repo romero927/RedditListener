@@ -1,0 +1,116 @@
+Process Started: 8/7/2024 4:53:19 AM +00:00
+Press ESC to stop
+
+#######################
+Subreddit: news
+-----------------------
+Number of Threads: 2
+Delay Between Requests: 24 seconds
+Request Limit Used: 89
+Request Limit Remaining: 11
+Request Limit Reset: 134 seconds
+
+-----------------------
+Top 5 Posts:
+-----------------------
+Title: Pennsylvania Supreme Court agrees to review suicide ruling in case of woman with 20 stab wounds
+Upvotes: 727
+Author: Silent-Resort-3076
+Created UTC: 8/7/2024 1:21:26 PM +00:00
+Post ID: 1embmsr
+Permalink: /r/news/comments/1embmsr/pennsylvania_supreme_court_agrees_to_review/
+
+Title: Moment dog sparks house fire after chewing power bank
+Upvotes: 198
+Author: GubmintTroll
+Created UTC: 8/7/2024 10:49:07 AM +00:00
+Post ID: 1em8nub
+Permalink: /r/news/comments/1em8nub/moment_dog_sparks_house_fire_after_chewing_power/
+
+Title: Part of a hotel on Germany's Mosel River collapses. 2 people are dead and 2 are trapped
+Upvotes: 91
+Author: olegvas21
+Created UTC: 8/7/2024 12:53:15 PM +00:00
+Post ID: 1emaztf
+Permalink: /r/news/comments/1emaztf/part_of_a_hotel_on_germanys_mosel_river_collapses/
+
+-----------------------
+Top 5 Authors with Most Posts:
+-----------------------
+Author: Silent-Resort-3076
+# Posts: 1
+
+Author: olegvas21
+# Posts: 1
+
+Author: GubmintTroll
+# Posts: 1
+
+-----------------------
+
+#######################
+Subreddit: askreddit
+-----------------------
+Number of Threads: 2
+Delay Between Requests: 256 seconds
+Request Limit Used: 99
+Request Limit Remaining: 1
+Request Limit Reset: 128 seconds
+
+-----------------------
+Top 5 Posts:
+-----------------------
+Title: Did you forgive the person who hurt you the most? Why or why not?
+Upvotes: 1023
+Author: TeluguFilmFile
+Created UTC: 8/7/2024 6:59:17 AM +00:00
+Post ID: 1em57q1
+Permalink: /r/AskReddit/comments/1em57q1/did_you_forgive_the_person_who_hurt_you_the_most/
+
+Title: You're transported 500 years into the past, but with your smartphone and a fully functioning internet. What would be the first thing you do?
+Upvotes: 1004
+Author: cognitive_courier
+Created UTC: 8/7/2024 10:13:10 AM +00:00
+Post ID: 1em82rq
+Permalink: /r/AskReddit/comments/1em82rq/youre_transported_500_years_into_the_past_but/
+
+Title: What were the warning signs before someone you know killed themselves?
+Upvotes: 934
+Author: Interesting_Age_1214
+Created UTC: 8/7/2024 7:06:24 AM +00:00
+Post ID: 1em5c0k
+Permalink: /r/AskReddit/comments/1em5c0k/what_were_the_warning_signs_before_someone_you/
+
+Title: What are the funniest dirty/adult jokes you know of?
+Upvotes: 370
+Author: duck-rat
+Created UTC: 8/7/2024 7:52:14 AM +00:00
+Post ID: 1em5zzp
+Permalink: /r/AskReddit/comments/1em5zzp/what_are_the_funniest_dirtyadult_jokes_you_know_of/
+
+Title: What's the most unexpected sacrifice you've made that ended up being incredibly rewarding?
+Upvotes: 214
+Author: Josefina10_
+Created UTC: 8/7/2024 10:19:39 AM +00:00
+Post ID: 1em86g4
+Permalink: /r/AskReddit/comments/1em86g4/whats_the_most_unexpected_sacrifice_youve_made/
+
+-----------------------
+Top 5 Authors with Most Posts:
+-----------------------
+Author: MGLedyHT
+# Posts: 26
+
+Author: sur3man
+# Posts: 10
+
+Author: RestretUS
+# Posts: 9
+
+Author: urmumsecretcrush
+# Posts: 8
+
+Author: haihz81
+# Posts: 7
+
+-----------------------
