@@ -27,7 +27,7 @@ Your app should also provide some way to report these values to a user (periodic
 # Reddit API Links
 - https://github.com/reddit-archive/reddit/wiki/OAuth2
 - https://support.reddithelp.com/hc/en-us/articles/16160319875092-Reddit-Data-API-Wiki
-- https://www.reddit.com/dev/api/#GET_top
+- https://www.reddit.com/dev/api/#GET_new
 
 # Reddit API Limits
 - X-Ratelimit-Used: Approximate number of requests used in this period
