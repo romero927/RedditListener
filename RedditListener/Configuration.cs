@@ -18,8 +18,7 @@ namespace RedditListener
                 "askreddit",
                 "news",
                 "gaming",
-                "funny",
-                "worldnews",
+                "programming",
                 "todayilearned"
             };
         //How many posts do I want to show for each subreddit? (Top #)
