@@ -14,6 +14,7 @@ Your app should also provide some way to report these values to a user (periodic
 - I added two operation modes, new and top. You can select this in the config file. I default it to top.
   - new = Look at all posts made from the point that the app was started and calculate the top NumberOfPostsToTrack and NumberOfAuthorsToTrack from those posts. This uses the new.json listing and will page backwards through the listing data slices until it finds the first post that was created after start.Time between requests will slow down over time as the number of pages you have to go through increases, as each page uses a request.
    - top = Look at the top posts listing and calculate the top NumberOfPostsToTrack and NumberOfAuthorsToTrack from those posts. Looks at current top 100. More memory and request stable.
+ - The Listing endpoints don't actually require an access_token, but I still registered my app, get a token, and attach it so that reddit knows where the requests are coming from and so that we have the logic if we need to hit other endpoints in the future.
 
 # General Logic Flow
 - Start App
