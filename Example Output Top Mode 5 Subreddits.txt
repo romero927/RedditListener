@@ -1,0 +1,337 @@
+Process Started: 8/7/2024 2:35:41 PM +00:00
+Press ESC to stop
+
+#######################
+Subreddit: news
+-----------------------
+Number of Threads: 6
+Delay Between Requests: 12 seconds
+Request Limit Used: 15
+Request Limit Remaining: 85
+Request Limit Reset: 182 seconds
+
+-----------------------
+Top 5 Posts:
+-----------------------
+Title: X, Owned by Elon Musk, Brings Antitrust Suit Accusing Advertisers of a Boycott
+Upvotes: 29180
+Author: hdcase1
+Created UTC: 8/6/2024 3:53:08 PM +00:00
+Post ID: 1ellcib
+Permalink: /r/news/comments/1ellcib/x_owned_by_elon_musk_brings_antitrust_suit/
+
+Title: Wall St bounces back after global stocks rout
+Upvotes: 4813
+Author: YesterShill
+Created UTC: 8/6/2024 6:13:00 PM +00:00
+Post ID: 1elovpq
+Permalink: /r/news/comments/1elovpq/wall_st_bounces_back_after_global_stocks_rout/
+
+Title: Trump possible target of Pakistani national charged in murder-for-hire plot
+Upvotes: 4011
+Author: Big-Heron4763
+Created UTC: 8/6/2024 7:30:41 PM +00:00
+Post ID: 1elqub9
+Permalink: /r/news/comments/1elqub9/trump_possible_target_of_pakistani_national/
+
+Title: Pennsylvania Supreme Court agrees to review suicide ruling in case of woman with 20 stab wounds
+Upvotes: 3351
+Author: Silent-Resort-3076
+Created UTC: 8/7/2024 1:21:26 PM +00:00
+Post ID: 1embmsr
+Permalink: /r/news/comments/1embmsr/pennsylvania_supreme_court_agrees_to_review/
+
+Title: 56 days and counting: Two NASA astronauts are still in space as tests on Boeing capsule continue
+Upvotes: 3214
+Author: Silent-Resort-3076
+Created UTC: 8/6/2024 3:29:12 PM +00:00
+Post ID: 1elkqzk
+Permalink: /r/news/comments/1elkqzk/56_days_and_counting_two_nasa_astronauts_are/
+
+-----------------------
+Top 5 Authors with Most Posts:
+-----------------------
+Author: Silent-Resort-3076
+# Posts: 2
+
+Author: olegvas21
+# Posts: 2
+
+Author: hdcase1
+# Posts: 1
+
+Author: YesterShill
+# Posts: 1
+
+Author: Big-Heron4763
+# Posts: 1
+
+-----------------------
+
+#######################
+Subreddit: funny
+-----------------------
+Number of Threads: 6
+Delay Between Requests: 12 seconds
+Request Limit Used: 16
+Request Limit Remaining: 84
+Request Limit Reset: 182 seconds
+
+-----------------------
+Top 5 Posts:
+-----------------------
+Title: Got married yesterday. My BIL bought us our wedding cake.
+Upvotes: 6781
+Author: innkling
+Created UTC: 8/6/2024 10:21:36 PM +00:00
+Post ID: 1elv2x0
+Permalink: /r/funny/comments/1elv2x0/got_married_yesterday_my_bil_bought_us_our/
+
+Title: He didn't unlock that area yet
+Upvotes: 6682
+Author: joeurkel
+Created UTC: 8/7/2024 6:11:56 AM +00:00
+Post ID: 1em4hva
+Permalink: /r/funny/comments/1em4hva/he_didnt_unlock_that_area_yet/
+
+Title: I will never fault someone for not wanting a kid
+Upvotes: 4438
+Author: Jaci_D
+Created UTC: 8/6/2024 2:20:42 PM +00:00
+Post ID: 1elj1j3
+Permalink: /r/funny/comments/1elj1j3/i_will_never_fault_someone_for_not_wanting_a_kid/
+
+Title: they're never going to believe him again
+Upvotes: 3032
+Author: Rarepredator
+Created UTC: 8/7/2024 8:29:55 AM +00:00
+Post ID: 1em6jyh
+Permalink: /r/funny/comments/1em6jyh/theyre_never_going_to_believe_him_again/
+
+Title: How to Become Unbiased
+Upvotes: 2122
+Author: DotDotLine-Cartoons
+Created UTC: 8/7/2024 9:06:12 AM +00:00
+Post ID: 1em72z9
+Permalink: /r/funny/comments/1em72z9/how_to_become_unbiased/
+
+-----------------------
+Top 5 Authors with Most Posts:
+-----------------------
+
+#######################
+Subreddit: gaming
+-----------------------
+Number of Threads: 6
+Delay Between Requests: 12 seconds
+Author: innkling
+# Posts: 1
+
+Author: joeurkel
+# Posts: 1
+
+Author: Jaci_D
+# Posts: 1
+
+Author: Rarepredator
+# Posts: 1
+
+Author: DotDotLine-Cartoons
+# Posts: 1
+
+-----------------------
+Request Limit Used: 18
+Request Limit Remaining: 82
+Request Limit Reset: 182 seconds
+
+-----------------------
+Top 5 Posts:
+-----------------------
+Title: Posting in 2046 will be like
+Upvotes: 16937
+Author: 0_Kids_Three_Money
+Created UTC: 8/6/2024 10:18:52 PM +00:00
+Post ID: 1elv0h0
+Permalink: /r/gaming/comments/1elv0h0/posting_in_2046_will_be_like/
+
+Title: What great video game was lost to the sands of time?
+Upvotes: 7189
+Author: Johnnyboyeh
+Created UTC: 8/6/2024 4:28:43 PM +00:00
+Post ID: 1elm9ac
+Permalink: /r/gaming/comments/1elm9ac/what_great_video_game_was_lost_to_the_sands_of/
+
+Title: Millions of players used to play here, now it is the ghost town(Call of Duty 4, Crossfire map)
+Upvotes: 3578
+Author: Com412
+Created UTC: 8/7/2024 1:13:02 AM +00:00
+Post ID: 1elyx2b
+Permalink: /r/gaming/comments/1elyx2b/millions_of_players_used_to_play_here_now_it_is/
+
+Title: What game had better DLC then the base game its self
+Upvotes: 1398
+Author: RealitySmasher47
+Created UTC: 8/6/2024 7:27:47 PM +00:00
+Post ID: 1elqrqe
+Permalink: /r/gaming/comments/1elqrqe/what_game_had_better_dlc_then_the_base_game_its/
+
+Title: Know what I'm tired of in gaming? Exec decision makers.
+Upvotes: 909
+Author: theblackwhisper
+Created UTC: 8/7/2024 7:08:39 AM +00:00
+Post ID: 1em5d6o
+Permalink: /r/gaming/comments/1em5d6o/know_what_im_tired_of_in_gaming_exec_decision/
+
+-----------------------
+Top 5 Authors with Most Posts:
+-----------------------
+Author: jupiter_glass
+# Posts: 2
+
+Author: 0_Kids_Three_Money
+# Posts: 1
+
+Author: Johnnyboyeh
+# Posts: 1
+
+Author: Com412
+# Posts: 1
+
+Author: RealitySmasher47
+# Posts: 1
+
+-----------------------
+
+#######################
+Subreddit: askreddit
+-----------------------
+Number of Threads: 6
+Delay Between Requests: 12 seconds
+Request Limit Used: 14
+Request Limit Remaining: 86
+Request Limit Reset: 182 seconds
+
+-----------------------
+Top 5 Posts:
+-----------------------
+Title: What is something you call by a company name instead of the actual thing it is?
+Upvotes: 6426
+Author: kamruddinn
+Created UTC: 8/6/2024 4:38:24 PM +00:00
+Post ID: 1elmi2x
+Permalink: /r/AskReddit/comments/1elmi2x/what_is_something_you_call_by_a_company_name/
+
+Title: Women of Reddit: What's one thing men do that they think is attractive, but actually isn't?
+Upvotes: 4680
+Author: RedemptionKingu
+Created UTC: 8/7/2024 1:07:54 AM +00:00
+Post ID: 1elyt48
+Permalink: /r/AskReddit/comments/1elyt48/women_of_reddit_whats_one_thing_men_do_that_they/
+
+Title: What is so simple yet so hard to do?
+Upvotes: 2730
+Author: TinyElderberryOfYore
+Created UTC: 8/7/2024 12:11:39 AM +00:00
+Post ID: 1elxll5
+Permalink: /r/AskReddit/comments/1elxll5/what_is_so_simple_yet_so_hard_to_do/
+
+Title: What song/s would you choose to have sex to?
+Upvotes: 1875
+Author: WankStain615
+Created UTC: 8/6/2024 7:55:08 PM +00:00
+Post ID: 1elrfkl
+Permalink: /r/AskReddit/comments/1elrfkl/what_songs_would_you_choose_to_have_sex_to/
+
+Title: You're transported 500 years into the past, but with your smartphone and a fully functioning internet. What would be the first thing you do?
+Upvotes: 1263
+Author: cognitive_courier
+Created UTC: 8/7/2024 10:13:10 AM +00:00
+Post ID: 1em82rq
+Permalink: /r/AskReddit/comments/1em82rq/youre_transported_500_years_into_the_past_but/
+
+-----------------------
+Top 5 Authors with Most Posts:
+-----------------------
+Author: Cutie_Lima
+# Posts: 3
+
+Author: Windy_Noah
+# Posts: 2
+
+Author: sexygingerbarbie
+# Posts: 2
+
+Author: kamruddinn
+# Posts: 1
+
+Author: RedemptionKingu
+# Posts: 1
+
+-----------------------
+
+#######################
+Subreddit: worldnews
+-----------------------
+Number of Threads: 6
+Delay Between Requests: 12 seconds
+Request Limit Used: 17
+Request Limit Remaining: 83
+Request Limit Reset: 182 seconds
+
+-----------------------
+Top 5 Posts:
+-----------------------
+Title: Japan Kills First Fin Whale Despite Global Condemnation
+Upvotes: 18297
+Author: Plus-Bluejay-2024
+Created UTC: 8/6/2024 7:52:20 PM +00:00
+Post ID: 1elrd8e
+Permalink: /r/worldnews/comments/1elrd8e/japan_kills_first_fin_whale_despite_global/
+
+Title: Ukrainian forces launched cross-border attack into Russia, Moscow says
+Upvotes: 7705
+Author: IntlDogOfMystery
+Created UTC: 8/7/2024 8:54:10 AM +00:00
+Post ID: 1em6wfn
+Permalink: /r/worldnews/comments/1em6wfn/ukrainian_forces_launched_crossborder_attack_into/
+
+Title: Pro-Palestine demonstrators accused of antisemitism after protesting outside Fiddler on the Roof
+Upvotes: 5196
+Author: Giants4Truth
+Created UTC: 8/6/2024 9:13:59 PM +00:00
+Post ID: 1eltffj
+Permalink: /r/worldnews/comments/1eltffj/propalestine_demonstrators_accused_of/
+
+Title: Moscow claims clashes with Ukrainian troops on Russian soil
+Upvotes: 4718
+Author: BeigeBanshee
+Created UTC: 8/6/2024 8:14:48 PM +00:00
+Post ID: 1elrxh0
+Permalink: /r/worldnews/comments/1elrxh0/moscow_claims_clashes_with_ukrainian_troops_on/
+
+Title: Iran executes over 300 individuals in first seven months of 2024, 49 in July alone
+Upvotes: 3314
+Author: Red_Franklin
+Created UTC: 8/7/2024 4:25:03 AM +00:00
+Post ID: 1em2q8q
+Permalink: /r/worldnews/comments/1em2q8q/iran_executes_over_300_individuals_in_first_seven/
+
+-----------------------
+Top 5 Authors with Most Posts:
+-----------------------
+Author: IntlDogOfMystery
+# Posts: 5
+
+Author: DoremusJessup
+# Posts: 4
+
+Author: riwnodennyk
+# Posts: 3
+
+Author: CarpenterIT
+# Posts: 3
+
+Author: olegvas21
+# Posts: 3
+
+-----------------------
