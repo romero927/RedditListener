@@ -1,4 +1,4 @@
-﻿//System Includes
+//System Includes
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Runtime.CompilerServices;
@@ -158,6 +158,7 @@ static async Task<string> PostForRedditToken(HttpClient client)
     var responseString = await response.Content.ReadAsStringAsync();
     return responseString;
 }
+
 static async Task<RedditNewReturnObject> ProcessRedditNewAsync(HttpClient client, double startTimeUTC, string subreddit)
 {
     //Instantiate config object
