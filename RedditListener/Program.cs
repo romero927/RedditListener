@@ -167,7 +167,7 @@ static async Task<RedditNewReturnObject> ProcessRedditNewAsync(HttpClient client
 
     //GET the new.json for the selected subreddit.
     HttpResponseMessage response = await client.GetAsync(
-        "https://www.reddit.com/r/" + subreddit + "/new.json?limit=100");
+        "https://www.reddit.com/r/" + subreddit + "/"+config.mode+".json?limit=100");
 
     response.EnsureSuccessStatusCode();
 
@@ -180,7 +180,7 @@ static async Task<RedditNewReturnObject> ProcessRedditNewAsync(HttpClient client
     string json = await response.Content.ReadAsStringAsync();
 
     //Deserialize JSON into Object to contain posts
-    Root? NewPostsCollection = JsonSerializer.Deserialize<Root>(json);
+    Root? PostsCollection = JsonSerializer.Deserialize<Root>(json);
 
     //New List that we will use to truncate any data we dont need for posts and sort
     List<RedditPostSummary> PostSummaries = new List<RedditPostSummary>();
@@ -189,44 +189,70 @@ static async Task<RedditNewReturnObject> ProcessRedditNewAsync(HttpClient client
     Dictionary<string, int> AuthorCounts = new Dictionary<string, int>();
 
     //ID if we need to go to next page
-    bool PostBeforeStartFound = false;
+    bool EndPaging = false;
 
     //Loop through posts
-    foreach (RedditPost Post in NewPostsCollection.data.children)
+    foreach (RedditPost Post in PostsCollection.data.children)
     {
-        //If post was created after the app started, it is in play
-        if (Post.data.created_utc is not null && Post.data.created_utc >= startTimeUTC)
+        if (config.mode == "new")
         {
-            RedditPostSummary PostSummary = new RedditPostSummary();
-            PostSummary.title = Post.data.title;
-            PostSummary.author = Post.data.author;
-            PostSummary.upvotes = Post.data.ups;
-            PostSummary.createdutc = (long)(Post.data.created_utc);
-            PostSummary.id = Post.data.id;
-            PostSummary.url = Post.data.permalink;
-
-            PostSummaries.Add(PostSummary);
-
-            if (AuthorCounts is not null && Post.data.author is not null)
+            //If post was created after the app started, it is in play
+            if (Post.data.created_utc is not null && Post.data.created_utc >= startTimeUTC)
             {
-                if (AuthorCounts.ContainsKey(Post.data.author))
-                    AuthorCounts[Post.data.author]++;
-                else AuthorCounts.Add(Post.data.author, 1);
+                RedditPostSummary PostSummary = new RedditPostSummary();
+                PostSummary.title = Post.data.title;
+                PostSummary.author = Post.data.author;
+                PostSummary.upvotes = Post.data.ups;
+                PostSummary.createdutc = (long)(Post.data.created_utc);
+                PostSummary.id = Post.data.id;
+                PostSummary.url = Post.data.permalink;
+
+                PostSummaries.Add(PostSummary);
+
+                if (AuthorCounts is not null && Post.data.author is not null)
+                {
+                    if (AuthorCounts.ContainsKey(Post.data.author))
+                        AuthorCounts[Post.data.author]++;
+                    else AuthorCounts.Add(Post.data.author, 1);
+                }
+            }
+            else if (Post.data.created_utc is not null && Post.data.created_utc < startTimeUTC)
+            {
+                //Current Post happened before app start, this will be our end condition
+                EndPaging = true;
             }
         }
-        else if (Post.data.created_utc is not null && Post.data.created_utc < startTimeUTC)
+        else
         {
-            //Current Post happened before app start, this will be our end condition
-            PostBeforeStartFound = true;
+            //If post was created after the app started, it is in play
+            if (Post.data.created_utc is not null)
+            {
+                RedditPostSummary PostSummary = new RedditPostSummary();
+                PostSummary.title = Post.data.title;
+                PostSummary.author = Post.data.author;
+                PostSummary.upvotes = Post.data.ups;
+                PostSummary.createdutc = (long)(Post.data.created_utc);
+                PostSummary.id = Post.data.id;
+                PostSummary.url = Post.data.permalink;
+
+                PostSummaries.Add(PostSummary);
+
+                if (AuthorCounts is not null && Post.data.author is not null)
+                {
+                    if (AuthorCounts.ContainsKey(Post.data.author))
+                        AuthorCounts[Post.data.author]++;
+                    else AuthorCounts.Add(Post.data.author, 1);
+                }
+            }
         }
     }
 
-    //If we didnt find end condition, we need to loop back to next page of data slice
-    while(!PostBeforeStartFound)
+    //If we are in new mode and didnt find end condition, we need to loop back to next page of data slice
+    while (config.mode == "new" && !EndPaging)
     {
         //Get the next slice using after
         response = await client.GetAsync(
-        "https://www.reddit.com/r/" + subreddit + "/new.json?limit=100&after="+NewPostsCollection.data.after);
+        "https://www.reddit.com/r/" + subreddit + "/"+config.mode+".json?limit=100&after="+PostsCollection.data.after);
 
         response.EnsureSuccessStatusCode();
 
@@ -239,10 +265,10 @@ static async Task<RedditNewReturnObject> ProcessRedditNewAsync(HttpClient client
         json = await response.Content.ReadAsStringAsync();
 
         //Deserialize JSON into Object to contain posts
-        NewPostsCollection = JsonSerializer.Deserialize<Root>(json);
+        PostsCollection = JsonSerializer.Deserialize<Root>(json);
 
         //Loop through posts
-        foreach (RedditPost Post in NewPostsCollection.data.children)
+        foreach (RedditPost Post in PostsCollection.data.children)
         {
             //If post was created after the app started, it is in play
             if (Post.data.created_utc is not null && Post.data.created_utc >= startTimeUTC)
@@ -267,7 +293,7 @@ static async Task<RedditNewReturnObject> ProcessRedditNewAsync(HttpClient client
             else if (Post.data.created_utc is not null && Post.data.created_utc < startTimeUTC)
             {
                 //Found our end condition
-                PostBeforeStartFound = true;
+                EndPaging = true;
             }
         }
     }
