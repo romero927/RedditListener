@@ -187,6 +187,9 @@ static async Task<RedditNewReturnObject> ProcessRedditNewAsync(HttpClient client
     //Dictionary we will use to track # of posts by author
     Dictionary<string, int> AuthorCounts = new Dictionary<string, int>();
 
+    //ID if we need to go to next page
+    bool PostBeforeStartFound = false;
+
     //Loop through posts
     foreach (RedditPost Post in NewPostsCollection.data.children)
     {
@@ -208,6 +211,62 @@ static async Task<RedditNewReturnObject> ProcessRedditNewAsync(HttpClient client
                 if (AuthorCounts.ContainsKey(Post.data.author))
                     AuthorCounts[Post.data.author]++;
                 else AuthorCounts.Add(Post.data.author, 1);
+            }
+        }
+        else if (Post.data.created_utc is not null && Post.data.created_utc < startTimeUTC)
+        {
+            //Current Post happened before app start, this will be our end condition
+            PostBeforeStartFound = true;
+        }
+    }
+
+    //If we didnt find end condition, we need to loop back to next page of data slice
+    while(!PostBeforeStartFound)
+    {
+        //Get the next slice using after
+        response = await client.GetAsync(
+        "https://www.reddit.com/r/" + subreddit + "/new.json?limit=100&after="+NewPostsCollection.data.after);
+
+        response.EnsureSuccessStatusCode();
+
+        //What are the rate limits currently at?
+        xratelimitused = Convert.ToInt32(Convert.ToDouble((response.Headers.GetValues("x-ratelimit-used").First())));
+        xratelimitremaining = Convert.ToInt32(Convert.ToDouble((response.Headers.GetValues("x-ratelimit-remaining").First())));
+        xratelimitreset = Convert.ToInt32(Convert.ToDouble((response.Headers.GetValues("x-ratelimit-reset").First())));
+
+        //Pull out the response JSON
+        json = await response.Content.ReadAsStringAsync();
+
+        //Deserialize JSON into Object to contain posts
+        NewPostsCollection = JsonSerializer.Deserialize<Root>(json);
+
+        //Loop through posts
+        foreach (RedditPost Post in NewPostsCollection.data.children)
+        {
+            //If post was created after the app started, it is in play
+            if (Post.data.created_utc is not null && Post.data.created_utc >= startTimeUTC)
+            {
+                RedditPostSummary PostSummary = new RedditPostSummary();
+                PostSummary.title = Post.data.title;
+                PostSummary.author = Post.data.author;
+                PostSummary.upvotes = Post.data.ups;
+                PostSummary.createdutc = (long)(Post.data.created_utc);
+                PostSummary.id = Post.data.id;
+                PostSummary.url = Post.data.permalink;
+
+                PostSummaries.Add(PostSummary);
+
+                if (AuthorCounts is not null && Post.data.author is not null)
+                {
+                    if (AuthorCounts.ContainsKey(Post.data.author))
+                        AuthorCounts[Post.data.author]++;
+                    else AuthorCounts.Add(Post.data.author, 1);
+                }
+            }
+            else if (Post.data.created_utc is not null && Post.data.created_utc < startTimeUTC)
+            {
+                //Found our end condition
+                PostBeforeStartFound = true;
             }
         }
     }

@@ -22,9 +22,10 @@ namespace RedditListener
         public string? permalink { get; set; }
         public double? created_utc { get; set; }
         public List<RedditPost>? children { get; set; }
+        public string? after { get; set; }
 
         //Unused parameters commented out to save memory.
-        //public string? after { get; set; }
+        //
         //public int? dist { get; set; }
         //public string? modhash { get; set; }
         //public string? geo_filter { get; set; }
