@@ -1,4 +1,4 @@
-Process Started: 8/6/2024 11:22:11 PM +00:00
+Process Started: 8/7/2024 12:03:37 AM +00:00
 Press ESC to stop
 
 #######################
@@ -6,81 +6,99 @@ Subreddit: askreddit
 -----------------------
 Number of Threads: 2
 Delay Between Requests: 10 seconds
-Request Limit Used: 65
-Request Limit Remaining: 35
-Request Limit Reset: 203 seconds
+Request Limit Used: 68
+Request Limit Remaining: 32
+Request Limit Reset: 191 seconds
 -----------------------
 Top 5 Posts:
 -----------------------
-Title: What do you think of the recent popularity of the insult "Weird"?
+Title: Have you ever died before? What was it like? What did you see?
+Upvotes: 12
+Author: cyrus_208
+Created UTC: 8/7/2024 12:08:26 AM +00:00
+Post ID: 1elxiy9
+Permalink: /r/AskReddit/comments/1elxiy9/have_you_ever_died_before_what_was_it_like_what/
+
+Title: What is so simple yet so hard to do?
+Upvotes: 10
+Author: TinyElderberryOfYore
+Created UTC: 8/7/2024 12:11:39 AM +00:00
+Post ID: 1elxll5
+Permalink: /r/AskReddit/comments/1elxll5/what_is_so_simple_yet_so_hard_to_do/
+
+Title: What is the most bizzare and outragous dream you have ever had that made you question your own realitity?
+Upvotes: 6
+Author: Particular_Welcome36
+Created UTC: 8/7/2024 12:12:05 AM +00:00
+Post ID: 1elxlwv
+Permalink: /r/AskReddit/comments/1elxlwv/what_is_the_most_bizzare_and_outragous_dream_you/
+
+Title: What small changes have you made in your daily routine that had a big impact on your health?
+Upvotes: 4
+Author: foratbahrani
+Created UTC: 8/7/2024 12:12:47 AM +00:00
+Post ID: 1elxmg4
+Permalink: /r/AskReddit/comments/1elxmg4/what_small_changes_have_you_made_in_your_daily/
+
+Title: What is the craziest science fiction book you have ever read that completely blew your ming?
 Upvotes: 3
-Author: BlackHorseTuxedo
-Created UTC: 8/6/2024 11:28:14 PM +00:00
-Post ID: 1elwmj6
-Permalink: /r/AskReddit/comments/1elwmj6/what_do_you_think_of_the_recent_popularity_of_the/
-
-Title: Groomsmen, what are some of the best and worst gifts you've received from the groom?
-Upvotes: 3
-Author: rubberslippers
-Created UTC: 8/6/2024 11:26:24 PM +00:00
-Post ID: 1elwl1m
-Permalink: /r/AskReddit/comments/1elwl1m/groomsmen_what_are_some_of_the_best_and_worst/
-
-Title: What are some words that rhyme with porn?
-Upvotes: 2
-Author: MusicSufficient2652
-Created UTC: 8/6/2024 11:31:32 PM +00:00
-Post ID: 1elwp5w
-Permalink: /r/AskReddit/comments/1elwp5w/what_are_some_words_that_rhyme_with_porn/
-
-Title: What's the best meal out you've ever had?
-Upvotes: 1
-Author: gibgod
-Created UTC: 8/6/2024 11:36:14 PM +00:00
-Post ID: 1elwsxv
-Permalink: /r/AskReddit/comments/1elwsxv/whats_the_best_meal_out_youve_ever_had/
-
-Title: How often do you keep in touch with your high school circle?
-Upvotes: 1
-Author: elasticsearch_help
-Created UTC: 8/6/2024 11:35:40 PM +00:00
-Post ID: 1elwsha
-Permalink: /r/AskReddit/comments/1elwsha/how_often_do_you_keep_in_touch_with_your_high/
+Author: Imaginary-Bench8342
+Created UTC: 8/7/2024 12:14:38 AM +00:00
+Post ID: 1elxnw5
+Permalink: /r/AskReddit/comments/1elxnw5/what_is_the_craziest_science_fiction_book_you/
 
 -----------------------
 Top 5 Authors with Most Posts:
 -----------------------
-Author: elasticsearch_help
+Author: foratbahrani
 # Posts: 2
 
-Author: gibgod
+Author: Otherwise-One6154
 # Posts: 1
 
-Author: speed150mph
+Author: Repulsive-Mode-6711
 # Posts: 1
 
-Author: CasualVictim
+Author: Fit-Perspective2340
 # Posts: 1
 
-Author: GapingAssTroll
+Author: Comfortable-Light517
 # Posts: 1
 
 -----------------------
 
 #######################
-Subreddit: funny
+Subreddit: gaming
 -----------------------
 Number of Threads: 2
 Delay Between Requests: 10 seconds
-Request Limit Used: 66
-Request Limit Remaining: 34
-Request Limit Reset: 203 seconds
+Request Limit Used: 67
+Request Limit Remaining: 33
+Request Limit Reset: 191 seconds
 -----------------------
 Top 5 Posts:
 -----------------------
-NO POSTS YET, PLEASE STAND BY
+Title: What video game villain deserves a A for effort?
+Upvotes: 1
+Author: Agent1230
+Created UTC: 8/7/2024 12:07:52 AM +00:00
+Post ID: 1elxiie
+Permalink: /r/gaming/comments/1elxiie/what_video_game_villain_deserves_a_a_for_effort/
+
+Title: Why are side quests so often better than the main quest?
+Upvotes: 0
+Author: AtreidesOne
+Created UTC: 8/7/2024 12:13:28 AM +00:00
+Post ID: 1elxmz3
+Permalink: /r/gaming/comments/1elxmz3/why_are_side_quests_so_often_better_than_the_main/
+
 -----------------------
 Top 5 Authors with Most Posts:
 -----------------------
-NO AUTHORS YET, PLEASE STAND BY
+Author: AtreidesOne
+# Posts: 1
+
+Author: Agent1230
+# Posts: 1
+
 -----------------------
