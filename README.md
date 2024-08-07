@@ -15,10 +15,10 @@ Your app should also provide some way to report these values to a user (periodic
 - Get Auth Token
 - Capture Current Time as Start Time
 - For Each Subreddit
-  -- Monitor the API threshold limits and limit API requests accordingly
-  -- Capture any posts created after Start Time ordered by upvotes and add to structure
-  -- After each capture, loop through posts and ID count post per user
-  -- Display current top posts and current user post counts
+  - Monitor the API threshold limits and limit API requests accordingly
+  - Capture any posts created after Start Time ordered by upvotes and add to structure
+  - After each capture, loop through posts and ID count post per user
+  - Display current top posts and current user post counts
 
 # Project Links
 - Configuration: https://github.com/romero927/RedditListener/blob/main/RedditListener/Configuration.cs
@@ -35,7 +35,11 @@ Your app should also provide some way to report these values to a user (periodic
 - X-Ratelimit-Reset: Approximate number of seconds to end of period
 
 # Future Concerns
-- Due to the async multhreaded nature of the HTTPS requests, the console output can sometimes get out of order. This would not be an issue in a DB or File save.
+- Due to the async multhreaded nature of the HTTPS requests, the console output can sometimes get out of order, especially on the first display. It resolves quickly and would not be an issue in a DB or File save.
+- The /r/subreddit/new.json endpoint is paginated.
+  - I have set my data slice to the maximum of 100.
+  - If the app runs long enough that there are more than 100 posts created on a subreddit between start and current time, the pagination could roll over and filter out previous data.
+  - This would need to be accounted for in a more complex implementation.
 - I built this for .NET 8, but couldn't find a way to add unit tests for this, I was maxed out at .NET 4.8 for the unit test project. Unit tests are the first thing I would go back and fix if able.
 - I have run this for 30 mins and it was stable, but I haven't checked long term stability that would be needed for production
 - If there is an error, the app will continue working with basic error handling. A real app would need much more in-depth checking.
