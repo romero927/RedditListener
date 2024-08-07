@@ -63,11 +63,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Kyle\\source\\repos\\RedditListener\\RedditListener\\RedditListener.csproj",
+      "projectUniqueName": "E:\\RedditListener\\RedditListener\\RedditListener.csproj",
       "projectName": "RedditListener",
-      "projectPath": "C:\\Users\\Kyle\\source\\repos\\RedditListener\\RedditListener\\RedditListener.csproj",
+      "projectPath": "E:\\RedditListener\\RedditListener\\RedditListener.csproj",
       "packagesPath": "C:\\Users\\Kyle\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Kyle\\source\\repos\\RedditListener\\RedditListener\\obj\\",
+      "outputPath": "E:\\RedditListener\\RedditListener\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

@@ -166,7 +166,7 @@ static async Task<RedditNewReturnObject> ProcessRedditNewAsync(HttpClient client
 
     //GET the new.json for the selected subreddit.
     HttpResponseMessage response = await client.GetAsync(
-        "https://www.reddit.com/r/" + subreddit + "/new.json");
+        "https://www.reddit.com/r/" + subreddit + "/new.json?limit=100");
 
     response.EnsureSuccessStatusCode();
 

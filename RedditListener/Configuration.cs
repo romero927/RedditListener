@@ -9,7 +9,7 @@ namespace RedditListener
     internal class Configuration
     {
         //What is our Reddit App ID? Used to get Token
-        public readonly string authenticationString = "<APP ID GOES HERE>";
+        public readonly string authenticationString = "LxD7vC2UCte54tFIZCr7Vw:";
         //What is my custom user agent?
         public readonly string useragent = "kgromerov0.0.1";
         //What subreddits do I want to monitor?

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RedditListener")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+951c9f3044c24cbdbec11e32c37a8d51d47a2f20")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1bb95b7fc44ac3150b426370d22a91c369e0a9b2")]
 [assembly: System.Reflection.AssemblyProductAttribute("RedditListener")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RedditListener")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
