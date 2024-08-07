@@ -9,6 +9,7 @@ using System.Collections;
 using System.Threading.RateLimiting;
 using System;
 using System.Net.Http.Json;
+using RedditListener;
 
 //Kick Off App
 await MainApp();
@@ -51,8 +52,10 @@ static async Task MainApp()
             {
                 MaxDegreeOfParallelism = 5
             };
+            
             //1 thread per subreddit we will monitor
             int numberofthreads = config.SubRedditsToMonitor.Length;
+            
             //Start the parallel threads
             await Parallel.ForEachAsync(config.SubRedditsToMonitor, parallelOptions, async (subreddit, ct) =>
             {
@@ -101,6 +104,7 @@ static async Task MainApp()
                     {
                         Console.WriteLine("NO POSTS YET, PLEASE STAND BY");
                     }
+                    
                     //Output the Top Authors data to console in a readable format
                     Console.WriteLine("-----------------------");
                     Console.WriteLine("Top " + ReturnedData.NumberOfAuthorsToTrack + " Authors with Most Posts:");
