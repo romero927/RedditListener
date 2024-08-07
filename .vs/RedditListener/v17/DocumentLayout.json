@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "E:\\RedditListener\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{54A244D8-2DF7-421F-BCFA-550DCF56D542}|RedditListener\\RedditListener.csproj|e:\\redditlistener\\redditlistener\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{54A244D8-2DF7-421F-BCFA-550DCF56D542}|RedditListener\\RedditListener.csproj|solutionrelative:redditlistener\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{54A244D8-2DF7-421F-BCFA-550DCF56D542}|RedditListener\\RedditListener.csproj|e:\\redditlistener\\redditlistener\\configuration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{54A244D8-2DF7-421F-BCFA-550DCF56D542}|RedditListener\\RedditListener.csproj|solutionrelative:redditlistener\\configuration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{54A244D8-2DF7-421F-BCFA-550DCF56D542}|RedditListener\\RedditListener.csproj|e:\\redditlistener\\redditlistener\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{54A244D8-2DF7-421F-BCFA-550DCF56D542}|RedditListener\\RedditListener.csproj|solutionrelative:redditlistener\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{54A244D8-2DF7-421F-BCFA-550DCF56D542}|RedditListener\\RedditListener.csproj|e:\\redditlistener\\redditlistener\\classes\\redditpostsummary.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -26,21 +26,25 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "E:\\RedditListener\\RedditListener\\Program.cs",
               "RelativeDocumentMoniker": "RedditListener\\Program.cs",
               "ToolTip": "E:\\RedditListener\\RedditListener\\Program.cs",
               "RelativeToolTip": "RedditListener\\Program.cs",
-              "ViewState": "AQIAAPAAAAAAAAAAAAAqwAkBAABCAAAA",
+              "ViewState": "AQIAABEAAAAAAAAAAAAuwEwAAAA9AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-06T15:59:41.948Z",
               "IsPinned": true,
               "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             },
             {
               "$type": "Document",
@@ -52,12 +56,7 @@
               "RelativeToolTip": "RedditListener\\classes\\RedditPost.cs",
               "ViewState": "AQIAAAkAAAAAAAAAAAAuwBcAAAA3AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-07T04:05:23.259Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+              "WhenOpened": "2024-08-07T04:05:23.259Z"
             },
             {
               "$type": "Document",
@@ -74,13 +73,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Configuration.cs",
               "DocumentMoniker": "E:\\RedditListener\\RedditListener\\Configuration.cs",
               "RelativeDocumentMoniker": "RedditListener\\Configuration.cs",
               "ToolTip": "E:\\RedditListener\\RedditListener\\Configuration.cs",
               "RelativeToolTip": "RedditListener\\Configuration.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAABEAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACAAAAAaAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-06T21:44:57.553Z",
               "EditorCaption": ""

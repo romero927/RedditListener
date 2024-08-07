@@ -17,26 +17,26 @@ await MainApp();
 static async Task MainApp()
 {
     //Instantiate config object
-    Configuration config = new Configuration();
+    Configuration Config = new Configuration();
 
     //Setup Auth Headers for HttpClient
-    using HttpClient client = new();
-    client.DefaultRequestHeaders.Accept.Clear();
+    using HttpClient Client = new();
+    Client.DefaultRequestHeaders.Accept.Clear();
 
-    var base64String = Convert.ToBase64String(
-       System.Text.Encoding.ASCII.GetBytes(config.authenticationString));
-    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", base64String);
-    client.DefaultRequestHeaders.Add("User-Agent", config.useragent);
+    var Base64String = Convert.ToBase64String(
+       System.Text.Encoding.ASCII.GetBytes(Config.AuthenticationString));
+    Client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", Base64String);
+    Client.DefaultRequestHeaders.Add("User-Agent", Config.UserAgent);
 
     //Get UNIX UTC Time at start of app
-    DateTime startTime = DateTime.UtcNow;
-    double startTimeUTC = ((DateTimeOffset)startTime).ToUnixTimeSeconds();
+    DateTime StartTime = DateTime.UtcNow;
+    double StartTimeUTC = ((DateTimeOffset)StartTime).ToUnixTimeSeconds();
 
     //Get the Reddit Token
-    string TokenJSON = await PostForRedditToken(client);
+    string TokenJSON = await PostForRedditToken(Client);
     RedditToken? Token = JsonSerializer.Deserialize<RedditToken>(TokenJSON);
     if(Token is not null)
-        client.DefaultRequestHeaders.Add("access_token", Token.access_token);
+        Client.DefaultRequestHeaders.Add("access_token", Token.Access_Token);
 
     do
     {
@@ -44,42 +44,42 @@ static async Task MainApp()
         while (!Console.KeyAvailable)
         {
             //Inform of exit button
-            Console.WriteLine("Process Started: " + DateTimeOffset.FromUnixTimeSeconds((long)startTimeUTC));
+            Console.WriteLine("Process Started: " + DateTimeOffset.FromUnixTimeSeconds((long)StartTimeUTC));
             Console.WriteLine("Press ESC to stop");
 
             //Setup Parallel Async HTTP Requests
-            ParallelOptions parallelOptions = new()
+            ParallelOptions ParallelOptions = new()
             {
-                MaxDegreeOfParallelism = 5
+                MaxDegreeOfParallelism = Config.MaxDegreeOfParallelism
             };
             
             //1 thread per subreddit we will monitor
-            int numberofthreads = config.SubRedditsToMonitor.Length;
+            int NumberOfThreads = Config.SubRedditsToMonitor.Length;
             
             //Start the parallel threads
-            await Parallel.ForEachAsync(config.SubRedditsToMonitor, parallelOptions, async (subreddit, ct) =>
+            await Parallel.ForEachAsync(Config.SubRedditsToMonitor, ParallelOptions, async (Subreddit, ct) =>
             {
                 //Instantiate Return Object
-                RedditNewReturnObject ReturnedData = new RedditNewReturnObject();
-                int threadsleep = 1000;
+                RedditReturnObject ReturnedData = new RedditReturnObject();
+                int ThreadSeep = 1000;
                 try
                 {
                     //Call reddit and get the new posts data
-                    ReturnedData = await ProcessRedditNewAsync(client, startTimeUTC, subreddit);
+                    ReturnedData = await ProcessRedditPostsAsync(Client, StartTimeUTC, Subreddit, Config);
 
                     //Figure out how long we should pause thread based on rate limits and number of threads that will also count against limits
-                    threadsleep = ((ReturnedData.xratelimitreset / ReturnedData.xratelimitremaining) * 1000) * numberofthreads;
+                    ThreadSeep = ((ReturnedData.xRateLimitReset / ReturnedData.xRateLimitRemaining) * 1000) * NumberOfThreads;
 
                     //Output the thread and rate limit data to console in a readable format
                     Console.WriteLine("");
                     Console.WriteLine("#######################");
-                    Console.WriteLine("Subreddit: " + subreddit);
+                    Console.WriteLine("Subreddit: " + Subreddit);
                     Console.WriteLine("-----------------------");
-                    Console.WriteLine("Number of Threads: " + numberofthreads);
-                    Console.WriteLine("Delay Between Requests: " + (threadsleep / 1000) + " seconds");
-                    Console.WriteLine("Request Limit Used: " + ReturnedData.xratelimitused);
-                    Console.WriteLine("Request Limit Remaining: " + ReturnedData.xratelimitremaining);
-                    Console.WriteLine("Request Limit Reset: " + ReturnedData.xratelimitreset + " seconds");
+                    Console.WriteLine("Number of Threads: " + NumberOfThreads);
+                    Console.WriteLine("Delay Between Requests: " + (ThreadSeep / 1000) + " seconds");
+                    Console.WriteLine("Request Limit Used: " + ReturnedData.xRateLimitUsed);
+                    Console.WriteLine("Request Limit Remaining: " + ReturnedData.xRateLimitRemaining);
+                    Console.WriteLine("Request Limit Reset: " + ReturnedData.xRateLimitReset + " seconds");
                     Console.WriteLine("");
                     Console.WriteLine("-----------------------");
                     Console.WriteLine("Top " + ReturnedData.NumberOfPostsToTrack + " Posts:");
@@ -92,12 +92,12 @@ static async Task MainApp()
                         foreach (RedditPostSummary PostSummary in ReturnedData.PostSummaries)
                         {
 
-                            Console.WriteLine("Title: " + PostSummary.title);
-                            Console.WriteLine("Upvotes: " + PostSummary.upvotes);
-                            Console.WriteLine("Author: " + PostSummary.author);
-                            Console.WriteLine("Created UTC: " + DateTimeOffset.FromUnixTimeSeconds(PostSummary.createdutc));
-                            Console.WriteLine("Post ID: " + PostSummary.id);
-                            Console.WriteLine("Permalink: " + PostSummary.url);
+                            Console.WriteLine("Title: " + PostSummary.Title);
+                            Console.WriteLine("Upvotes: " + PostSummary.Upvotes);
+                            Console.WriteLine("Author: " + PostSummary.Author);
+                            Console.WriteLine("Created UTC: " + DateTimeOffset.FromUnixTimeSeconds(PostSummary.CreatedUTC));
+                            Console.WriteLine("Post ID: " + PostSummary.ID);
+                            Console.WriteLine("Permalink: " + PostSummary.PermaLink);
                             Console.WriteLine("");
                         }
                     }
@@ -113,10 +113,10 @@ static async Task MainApp()
 
                     if (ReturnedData.AuthorCounts.Count > 0)
                     {
-                        foreach (KeyValuePair<string, int> entry in ReturnedData.AuthorCounts)
+                        foreach (KeyValuePair<string, int> Entry in ReturnedData.AuthorCounts)
                         {
-                            Console.WriteLine("Author: " + entry.Key);
-                            Console.WriteLine("# Posts: " + entry.Value);
+                            Console.WriteLine("Author: " + Entry.Key);
+                            Console.WriteLine("# Posts: " + Entry.Value);
                             Console.WriteLine("");
                         }
                     }
@@ -127,7 +127,7 @@ static async Task MainApp()
                     Console.WriteLine("-----------------------");
 
                     //Sleep thread for calculated time to maximize usage of rate limit spread across threads
-                    Thread.Sleep(threadsleep);
+                    Thread.Sleep(ThreadSeep);
                 }
                 catch (Exception ex)
                 {
@@ -149,38 +149,35 @@ static async Task MainApp()
 static async Task<string> PostForRedditToken(HttpClient client)
 {
     //Get a access_token from reddit. Might actually not be needed for this but could be useful later
-    var values = new Dictionary<string, string>
+    var Values = new Dictionary<string, string>
       {
           { "grant_type", "https://oauth.reddit.com/grants/installed_client" },
           { "device_id", "b1589af8-9eb4-4922-8011-f697fc1b93a5" }
       };
-    var content = new FormUrlEncodedContent(values);
-    var response = await client.PostAsync("https://www.reddit.com/api/v1/access_token", content);
-    var responseString = await response.Content.ReadAsStringAsync();
-    return responseString;
+    var Content = new FormUrlEncodedContent(Values);
+    var Response = await client.PostAsync("https://www.reddit.com/api/v1/access_token", Content);
+    var ResponseString = await Response.Content.ReadAsStringAsync();
+    return ResponseString;
 }
 
-static async Task<RedditNewReturnObject> ProcessRedditNewAsync(HttpClient client, double startTimeUTC, string subreddit)
+static async Task<RedditReturnObject> ProcessRedditPostsAsync(HttpClient Client, double StartTimeUTC, string Subreddit, Configuration Config)
 {
-    //Instantiate config object
-    Configuration config = new Configuration();
-
     //GET the new.json for the selected subreddit.
-    HttpResponseMessage response = await client.GetAsync(
-        "https://www.reddit.com/r/" + subreddit + "/"+config.mode+".json?limit=100");
+    HttpResponseMessage Response = await Client.GetAsync(
+        "https://www.reddit.com/r/" + Subreddit + "/"+Config.Mode+".json?limit=100");
 
-    response.EnsureSuccessStatusCode();
+    Response.EnsureSuccessStatusCode();
 
     //What are the rate limits currently at?
-    int xratelimitused = Convert.ToInt32(Convert.ToDouble((response.Headers.GetValues("x-ratelimit-used").First())));
-    int xratelimitremaining = Convert.ToInt32(Convert.ToDouble((response.Headers.GetValues("x-ratelimit-remaining").First())));
-    int xratelimitreset = Convert.ToInt32(Convert.ToDouble((response.Headers.GetValues("x-ratelimit-reset").First())));
+    int xRateLimitUsed = Convert.ToInt32(Convert.ToDouble((Response.Headers.GetValues("x-ratelimit-used").First())));
+    int xRateLimitRemaining = Convert.ToInt32(Convert.ToDouble((Response.Headers.GetValues("x-ratelimit-remaining").First())));
+    int xRateLimitReset = Convert.ToInt32(Convert.ToDouble((Response.Headers.GetValues("x-ratelimit-reset").First())));
 
     //Pull out the response JSON
-    string json = await response.Content.ReadAsStringAsync();
+    string JSON = await Response.Content.ReadAsStringAsync();
 
     //Deserialize JSON into Object to contain posts
-    Root? PostsCollection = JsonSerializer.Deserialize<Root>(json);
+    Root? PostsCollection = JsonSerializer.Deserialize<Root>(JSON);
 
     //New List that we will use to truncate any data we dont need for posts and sort
     List<RedditPostSummary> PostSummaries = new List<RedditPostSummary>();
@@ -194,18 +191,18 @@ static async Task<RedditNewReturnObject> ProcessRedditNewAsync(HttpClient client
     //Loop through posts
     foreach (RedditPost Post in PostsCollection.data.children)
     {
-        if (config.mode == "new")
+        if (Config.Mode == "new")
         {
             //If post was created after the app started, it is in play
-            if (Post.data.created_utc is not null && Post.data.created_utc >= startTimeUTC)
+            if (Post.data.created_utc is not null && Post.data.created_utc >= StartTimeUTC)
             {
                 RedditPostSummary PostSummary = new RedditPostSummary();
-                PostSummary.title = Post.data.title;
-                PostSummary.author = Post.data.author;
-                PostSummary.upvotes = Post.data.ups;
-                PostSummary.createdutc = (long)(Post.data.created_utc);
-                PostSummary.id = Post.data.id;
-                PostSummary.url = Post.data.permalink;
+                PostSummary.Title = Post.data.title;
+                PostSummary.Author = Post.data.author;
+                PostSummary.Upvotes = Post.data.ups;
+                PostSummary.CreatedUTC = (long)(Post.data.created_utc);
+                PostSummary.ID = Post.data.id;
+                PostSummary.PermaLink = Post.data.permalink;
 
                 PostSummaries.Add(PostSummary);
 
@@ -216,7 +213,7 @@ static async Task<RedditNewReturnObject> ProcessRedditNewAsync(HttpClient client
                     else AuthorCounts.Add(Post.data.author, 1);
                 }
             }
-            else if (Post.data.created_utc is not null && Post.data.created_utc < startTimeUTC)
+            else if (Post.data.created_utc is not null && Post.data.created_utc < StartTimeUTC)
             {
                 //Current Post happened before app start, this will be our end condition
                 EndPaging = true;
@@ -228,12 +225,12 @@ static async Task<RedditNewReturnObject> ProcessRedditNewAsync(HttpClient client
             if (Post.data.created_utc is not null)
             {
                 RedditPostSummary PostSummary = new RedditPostSummary();
-                PostSummary.title = Post.data.title;
-                PostSummary.author = Post.data.author;
-                PostSummary.upvotes = Post.data.ups;
-                PostSummary.createdutc = (long)(Post.data.created_utc);
-                PostSummary.id = Post.data.id;
-                PostSummary.url = Post.data.permalink;
+                PostSummary.Title = Post.data.title;
+                PostSummary.Author = Post.data.author;
+                PostSummary.Upvotes = Post.data.ups;
+                PostSummary.CreatedUTC = (long)(Post.data.created_utc);
+                PostSummary.ID = Post.data.id;
+                PostSummary.PermaLink = Post.data.permalink;
 
                 PostSummaries.Add(PostSummary);
 
@@ -248,38 +245,38 @@ static async Task<RedditNewReturnObject> ProcessRedditNewAsync(HttpClient client
     }
 
     //If we are in new mode and didnt find end condition, we need to loop back to next page of data slice
-    while (config.mode == "new" && !EndPaging)
+    while (Config.Mode == "new" && !EndPaging)
     {
         //Get the next slice using after
-        response = await client.GetAsync(
-        "https://www.reddit.com/r/" + subreddit + "/"+config.mode+".json?limit=100&after="+PostsCollection.data.after);
+        Response = await Client.GetAsync(
+        "https://www.reddit.com/r/" + Subreddit + "/"+Config.Mode+".json?limit=100&after="+PostsCollection.data.after);
 
-        response.EnsureSuccessStatusCode();
+        Response.EnsureSuccessStatusCode();
 
         //What are the rate limits currently at?
-        xratelimitused = Convert.ToInt32(Convert.ToDouble((response.Headers.GetValues("x-ratelimit-used").First())));
-        xratelimitremaining = Convert.ToInt32(Convert.ToDouble((response.Headers.GetValues("x-ratelimit-remaining").First())));
-        xratelimitreset = Convert.ToInt32(Convert.ToDouble((response.Headers.GetValues("x-ratelimit-reset").First())));
+        xRateLimitUsed = Convert.ToInt32(Convert.ToDouble((Response.Headers.GetValues("x-ratelimit-used").First())));
+        xRateLimitRemaining = Convert.ToInt32(Convert.ToDouble((Response.Headers.GetValues("x-ratelimit-remaining").First())));
+        xRateLimitReset = Convert.ToInt32(Convert.ToDouble((Response.Headers.GetValues("x-ratelimit-reset").First())));
 
         //Pull out the response JSON
-        json = await response.Content.ReadAsStringAsync();
+        JSON = await Response.Content.ReadAsStringAsync();
 
         //Deserialize JSON into Object to contain posts
-        PostsCollection = JsonSerializer.Deserialize<Root>(json);
+        PostsCollection = JsonSerializer.Deserialize<Root>(JSON);
 
         //Loop through posts
         foreach (RedditPost Post in PostsCollection.data.children)
         {
             //If post was created after the app started, it is in play
-            if (Post.data.created_utc is not null && Post.data.created_utc >= startTimeUTC)
+            if (Post.data.created_utc is not null && Post.data.created_utc >= StartTimeUTC)
             {
                 RedditPostSummary PostSummary = new RedditPostSummary();
-                PostSummary.title = Post.data.title;
-                PostSummary.author = Post.data.author;
-                PostSummary.upvotes = Post.data.ups;
-                PostSummary.createdutc = (long)(Post.data.created_utc);
-                PostSummary.id = Post.data.id;
-                PostSummary.url = Post.data.permalink;
+                PostSummary.Title = Post.data.title;
+                PostSummary.Author = Post.data.author;
+                PostSummary.Upvotes = Post.data.ups;
+                PostSummary.CreatedUTC = (long)(Post.data.created_utc);
+                PostSummary.ID = Post.data.id;
+                PostSummary.PermaLink = Post.data.permalink;
 
                 PostSummaries.Add(PostSummary);
 
@@ -290,7 +287,7 @@ static async Task<RedditNewReturnObject> ProcessRedditNewAsync(HttpClient client
                     else AuthorCounts.Add(Post.data.author, 1);
                 }
             }
-            else if (Post.data.created_utc is not null && Post.data.created_utc < startTimeUTC)
+            else if (Post.data.created_utc is not null && Post.data.created_utc < StartTimeUTC)
             {
                 //Found our end condition
                 EndPaging = true;
@@ -299,23 +296,23 @@ static async Task<RedditNewReturnObject> ProcessRedditNewAsync(HttpClient client
     }
 
     //Order post summaries descending, and take configured top number
-    PostSummaries = PostSummaries.OrderByDescending(p => p.upvotes).Take(config.NumberOfPostsToTrack).ToList();
+    PostSummaries = PostSummaries.OrderByDescending(p => p.Upvotes).Take(Config.NumberOfPostsToTrack).ToList();
 
     //Order author counts descending, and take configured top number
-    Dictionary<string, int> sortedAuthors = new Dictionary<string, int>();
+    Dictionary<string, int> SortedAuthors = new Dictionary<string, int>();
     
     if(AuthorCounts is not null)
-        sortedAuthors = AuthorCounts.OrderByDescending(pair => pair.Value).Take(config.NumberOfAuthorsToTrack)
+        SortedAuthors = AuthorCounts.OrderByDescending(pair => pair.Value).Take(Config.NumberOfAuthorsToTrack)
                .ToDictionary(pair => pair.Key, pair => pair.Value);
 
     //Build our return object from this task and return it.
-    RedditNewReturnObject DataToReturn = new RedditNewReturnObject();
-    DataToReturn.NumberOfPostsToTrack = config.NumberOfPostsToTrack;
-    DataToReturn.NumberOfAuthorsToTrack = config.NumberOfAuthorsToTrack;
+    RedditReturnObject DataToReturn = new RedditReturnObject();
+    DataToReturn.NumberOfPostsToTrack = Config.NumberOfPostsToTrack;
+    DataToReturn.NumberOfAuthorsToTrack = Config.NumberOfAuthorsToTrack;
     DataToReturn.PostSummaries = PostSummaries;
-    DataToReturn.AuthorCounts = sortedAuthors;
-    DataToReturn.xratelimitremaining = xratelimitremaining;
-    DataToReturn.xratelimitreset = xratelimitreset;
-    DataToReturn.xratelimitused = xratelimitused;
+    DataToReturn.AuthorCounts = SortedAuthors;
+    DataToReturn.xRateLimitRemaining = xRateLimitRemaining;
+    DataToReturn.xRateLimitReset = xRateLimitReset;
+    DataToReturn.xRateLimitUsed = xRateLimitUsed;
     return DataToReturn;
 }

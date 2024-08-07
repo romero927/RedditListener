@@ -8,7 +8,7 @@ namespace RedditListener
 {
     internal class RedditToken
     {
-        public string access_token { get; set; }
+        public string Access_Token { get; set; }
         public string token_type { get; set; }
         public string device_id { get; set; }
         public int expires_in { get; set; }
@@ -16,7 +16,7 @@ namespace RedditListener
 
         public RedditToken()
         {
-            access_token = "";
+            Access_Token = "";
             token_type = "";
             device_id = "";
             expires_in = 0;

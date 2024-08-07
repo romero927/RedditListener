@@ -9,9 +9,9 @@ namespace RedditListener
     internal class Configuration
     {
         //What is our Reddit App ID? Used to get Token
-        public readonly string authenticationString = "<APP ID GOES HERE>";
+        public readonly string AuthenticationString = "<APP ID GOES HERE>";
         //What is my custom user agent?
-        public readonly string useragent = "kgromerov0.0.1";
+        public readonly string UserAgent = "kgromerov0.0.1";
         //What subreddits do I want to monitor?
         public readonly string[] SubRedditsToMonitor =
                 {
@@ -30,7 +30,9 @@ namespace RedditListener
         //      This uses the new.json listing and will page backwards through the listing data slices until it finds the first post that was created after start.
         //      Time between requests will slow down over time as the number of pages you have to go through increases, as each page uses a request.
         // top = Look at the top posts listing and calculate the top NumberOfPostsToTrack and NumberOfAuthorsToTrack from those posts. Looks at current top 100.
-        public string mode = "top";
+        public string Mode = "top";
+        //How many parallel threads can run at once?
+        public int MaxDegreeOfParallelism = 5;
 
     }
 }

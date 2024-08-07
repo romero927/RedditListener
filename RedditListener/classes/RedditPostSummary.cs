@@ -8,11 +8,11 @@ namespace RedditListener
 {
     internal class RedditPostSummary
     {
-        public string? id { get; set; }
-        public string? title { get; set; }
-        public string? author { get; set; }
-        public int? upvotes { get; set; }
-        public long createdutc { get; set; }
-        public string? url { get; set; }
+        public string? ID { get; set; }
+        public string? Title { get; set; }
+        public string? Author { get; set; }
+        public int? Upvotes { get; set; }
+        public long CreatedUTC { get; set; }
+        public string? PermaLink { get; set; }
     }
 }
