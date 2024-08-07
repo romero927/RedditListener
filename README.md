@@ -1,7 +1,7 @@
 # RedditListener
 Monitor Defined Subreddit(s) and output top post and top author data in near real-time. 
 - Written in Visual Studio Community 2022.
-- Targetting .NET 8 C#.
+- Targeting .NET 8 C#.
 
 # Project Definition
 Reddit, much like other social media platforms, provides a way for users to communicate their interests etc. For this exercise, we would like to see you build an application that listens to your choice of subreddits (best to choose one with a good amount of posts). You can use this LINK to help identify one that interests you.  We’d like to see the exercise completed in the language you are applying for, and you are free to use any 3rd party libraries you would like. Your app should consume the posts from your chosen subreddit in near real time and keep track of the following statistics between the time your application starts until it ends:
