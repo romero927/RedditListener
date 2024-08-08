@@ -1,5 +1,6 @@
 # RedditListener
 Monitor Defined Subreddit(s) and output top post and top author data in near real-time. 
+- Written by Kyle Romero, 2024 (https://github.com/romero927 / https://kgromero.com)
 - Written in Visual Studio Community 2022.
 - Targeting .NET 8 C#.
 
