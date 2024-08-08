@@ -8,13 +8,17 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="System.Threading.RateLimiting" Version="8.0.0" />
+    <None Remove="config.json" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="config.json">
+    <Content Include="config.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Threading.RateLimiting" Version="8.0.0" />
   </ItemGroup>
 
 </Project>
