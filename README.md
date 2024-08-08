@@ -37,9 +37,8 @@ Your app should also provide some way to report these values to a user (periodic
 - Capture Current Time as Start Time
 - For Each Subreddit
   - Monitor the API threshold limits and limit API requests accordingly
-  - Capture any posts created after Start Time ordered by upvotes and add to structure
-  - After each capture, loop through posts and ID count post per user
-  - Display current top posts and current user post counts
+  - Monitor defined subreddits (top or new json listing) and sort by top upvotes descending. Track authors and sort by # posts created descending.
+  - Report on this data for each subreddit async (also show the current request rate limit info).
 
 # Project Links
 - Configuration: [https://github.com/romero927/RedditListener/blob/main/RedditListener/config.json](https://github.com/romero927/RedditListener/blob/main/RedditListener/config.json)
