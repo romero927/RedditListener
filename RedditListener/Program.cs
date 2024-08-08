@@ -1,14 +1,6 @@
 //System Includes
-using System.Net.Http;
 using System.Net.Http.Headers;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Xml.Linq;
 using System.Text.Json;
-using System.Collections;
-using System.Threading.RateLimiting;
-using System;
-using System.Net.Http.Json;
 using RedditListener;
 
 //Kick Off App
@@ -22,7 +14,8 @@ static async Task MainApp()
     //Setup Auth Headers for HttpClient
     using HttpClient Client = new();
     Client.DefaultRequestHeaders.Accept.Clear();
-
+    
+    //Convert our Auth settings into Base64 and add a user agent
     var Base64String = Convert.ToBase64String(
        System.Text.Encoding.ASCII.GetBytes(Config.AuthenticationString));
     Client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", Base64String);

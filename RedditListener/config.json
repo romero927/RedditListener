@@ -1,0 +1,15 @@
+{
+  "authenticationString": "LxD7vC2UCte54tFIZCr7Vw:",
+  "userAgent": "kgromerov0.0.1",
+  "subRedditsToMonitor": [
+    "askreddit",
+    "news",
+    "gaming",
+    "programming",
+    "todayilearned"
+  ],
+  "numberOfPostsToTrack": 5,
+  "numberOfAuthorsToTrack": 5,
+  "mode": "top",
+  "maxDegreeOfParallelism": 5
+}
