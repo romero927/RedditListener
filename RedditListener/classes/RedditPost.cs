@@ -7,19 +7,19 @@ using System.Threading.Tasks;
 // Root myDeserializedClass = JsonConvert.DeserializeObject<Root>(myJsonResponse);
 namespace RedditListener
 {
-    internal class RedditPost
+    public class RedditPost : IRedditPost
     {
         public string? kind { get; set; }
         public Data? data { get; set; }
     }
 
-    internal class Root
+    public class Root : IRoot
     {
         public string? kind { get; set; }
         public Data? data { get; set; }
     }
 
-    internal class Data
+    public class Data : IData
     {
         public string? title { get; set; }
         public int? ups { get; set; }

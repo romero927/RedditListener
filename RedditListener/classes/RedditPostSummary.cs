@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RedditListener
 {
-    internal class RedditPostSummary
+    public class RedditPostSummary : IRedditPostSummary
     {
         public string? ID { get; set; }
         public string? Title { get; set; }
