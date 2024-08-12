@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 namespace RedditListener
 {
+
+
     internal class RedditToken
     {
         public string Access_Token { get; set; }

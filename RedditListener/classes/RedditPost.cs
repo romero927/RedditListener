@@ -13,6 +13,12 @@ namespace RedditListener
         public Data? data { get; set; }
     }
 
+    internal class Root
+    {
+        public string? kind { get; set; }
+        public Data? data { get; set; }
+    }
+
     internal class Data
     {
         public string? title { get; set; }
@@ -24,8 +30,9 @@ namespace RedditListener
         public List<RedditPost>? children { get; set; }
         public string? after { get; set; }
 
-        //Unused parameters commented out to save memory.
-        //
+        //-------------------------------------------
+        //Unused parameters and objects. Uncomment to deserialize.
+        //-------------------------------------------
         //public int? dist { get; set; }
         //public string? modhash { get; set; }
         //public string? geo_filter { get; set; }
@@ -165,11 +172,7 @@ namespace RedditListener
     //    public string? author_url { get; set; }
     //}
 
-    internal class Root
-    {
-        public string? kind { get; set; }
-        public Data? data { get; set; }
-    }
+
 
     //public class SecureMedia
     //{

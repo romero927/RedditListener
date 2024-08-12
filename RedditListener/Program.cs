@@ -38,6 +38,7 @@ static async Task MainApp()
         {
             //Inform of exit button
             Console.WriteLine("Process Started: " + DateTimeOffset.FromUnixTimeSeconds((long)StartTimeUTC));
+            Console.WriteLine("Config loaded from: " + Config.SetFrom);
             Console.WriteLine("Press ESC to stop");
 
             //Setup Parallel Async HTTP Requests

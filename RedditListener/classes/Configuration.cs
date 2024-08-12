@@ -7,7 +7,9 @@ using System.Threading.Tasks;
 
 namespace RedditListener
 {
-    internal class Configuration
+
+    //Configuration Class, Implements IConfiguration Interface
+    internal class Configuration : RedditListener.interfaces.IConfiguration
     {
         //Constructor: Load values from config.json. Fallback to sane defaults if there is an error.
         public Configuration()
@@ -17,18 +19,17 @@ namespace RedditListener
                 //Load our JSON config file and deserialize into an object
                 JSONDeserializedConfig ConfigFile = JsonFileReader.Read<JSONDeserializedConfig>(@"./config.json");
                 //Construct our Config object from the deserialized settings
-                AuthenticationString = ConfigFile.authenticationString;
-                UserAgent = ConfigFile.userAgent;
-                SubRedditsToMonitor = ConfigFile.subRedditsToMonitor;
-                NumberOfPostsToTrack = ConfigFile.numberOfPostsToTrack;
-                NumberOfAuthorsToTrack = ConfigFile.numberOfAuthorsToTrack;
-                Mode = ConfigFile.mode;
-                MaxDegreeOfParallelism = ConfigFile.maxDegreeOfParallelism;
+                AuthenticationString = ConfigFile.AuthenticationString;
+                UserAgent = ConfigFile.UserAgent;
+                SubRedditsToMonitor = ConfigFile.SubRedditsToMonitor;
+                NumberOfPostsToTrack = ConfigFile.NumberOfPostsToTrack;
+                NumberOfAuthorsToTrack = ConfigFile.NumberOfAuthorsToTrack;
+                Mode = ConfigFile.Mode;
+                MaxDegreeOfParallelism = ConfigFile.MaxDegreeOfParallelism;
+                SetFrom = "config.json";
             }
             catch (Exception ex)
             {
-                //Alert user to config.json file problem
-                Console.WriteLine("ERROR LOADING CONFIG FILE, FALLING BACK TO DEFAULTS");
                 //Fallback to Sane Defaults
                 AuthenticationString = "<APP ID GOES HERE>";
                 UserAgent = "kgromerov0.0.1";
@@ -44,20 +45,22 @@ namespace RedditListener
                 NumberOfAuthorsToTrack = 5;
                 Mode = "top";
                 MaxDegreeOfParallelism = 5;
+                SetFrom = "default";
             }
 
         }
 
-        //Private Data Model to Deserialize our Config File into during construciton
-        private class JSONDeserializedConfig
+        //Private Data Model to Deserialize our Config File into during construciton. Implements IConfiguration
+        private struct JSONDeserializedConfig : RedditListener.interfaces.IConfiguration
         {
-            public string authenticationString { get; set; }
-            public string userAgent { get; set; }
-            public string[] subRedditsToMonitor { get; set; }
-            public int numberOfPostsToTrack { get; set; }
-            public int numberOfAuthorsToTrack { get; set; }
-            public string mode { get; set; }
-            public int maxDegreeOfParallelism { get; set; }
+            public string AuthenticationString { get; set; }
+            public string UserAgent { get; set; }
+            public string[] SubRedditsToMonitor { get; set; }
+            public int NumberOfPostsToTrack { get; set; }
+            public int NumberOfAuthorsToTrack { get; set; }
+            public string Mode { get; set; }
+            public int MaxDegreeOfParallelism { get; set; }
+            public string SetFrom { get; set; }
         }
 
         //Logic to read Our JSON Config File
@@ -93,6 +96,8 @@ namespace RedditListener
         public string Mode { get; }
         //How many parallel threads can run at once?
         public int MaxDegreeOfParallelism { get; }
+        //Config file or Default? Only uses default if there is a problem using the file.
+        public string SetFrom { get;}
 
     }
 

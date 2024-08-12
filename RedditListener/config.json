@@ -1,15 +1,15 @@
 {
-  "authenticationString": "<APP ID GOES HERE>",
-  "userAgent": "kgromerov0.0.1",
-  "subRedditsToMonitor": [
+  "AuthenticationString": "LxD7vC2UCte54tFIZCr7Vw:",
+  "UserAgent": "kgromerov0.0.1",
+  "SubRedditsToMonitor": [
     "askreddit",
     "news",
     "gaming",
     "programming",
     "todayilearned"
   ],
-  "numberOfPostsToTrack": 5,
-  "numberOfAuthorsToTrack": 5,
-  "mode": "top",
-  "maxDegreeOfParallelism": 5
+  "NumberOfPostsToTrack": 5,
+  "NumberOfAuthorsToTrack": 5,
+  "Mode": "top",
+  "MaxDegreeOfParallelism": 5
 }
