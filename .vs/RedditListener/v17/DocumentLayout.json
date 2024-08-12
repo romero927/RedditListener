@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "E:\\RedditListener\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{54A244D8-2DF7-421F-BCFA-550DCF56D542}|RedditListener\\RedditListener.csproj|e:\\redditlistener\\redditlistener\\tests\\redditlistenertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{54A244D8-2DF7-421F-BCFA-550DCF56D542}|RedditListener\\RedditListener.csproj|solutionrelative:redditlistener\\tests\\redditlistenertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{54A244D8-2DF7-421F-BCFA-550DCF56D542}|RedditListener\\RedditListener.csproj|e:\\redditlistener\\redditlistener\\config.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{54A244D8-2DF7-421F-BCFA-550DCF56D542}|RedditListener\\RedditListener.csproj|solutionrelative:redditlistener\\config.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{54A244D8-2DF7-421F-BCFA-550DCF56D542}|RedditListener\\RedditListener.csproj|e:\\redditlistener\\redditlistener\\redditlistener.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
       "RelativeMoniker": "D:0:0:{54A244D8-2DF7-421F-BCFA-550DCF56D542}|RedditListener\\RedditListener.csproj|solutionrelative:redditlistener\\redditlistener.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{54A244D8-2DF7-421F-BCFA-550DCF56D542}|RedditListener\\RedditListener.csproj|e:\\redditlistener\\redditlistener\\tests\\redditlistenertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{54A244D8-2DF7-421F-BCFA-550DCF56D542}|RedditListener\\RedditListener.csproj|solutionrelative:redditlistener\\tests\\redditlistenertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{54A244D8-2DF7-421F-BCFA-550DCF56D542}|RedditListener\\RedditListener.csproj|e:\\redditlistener\\redditlistener\\classes\\redditapiutility.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -34,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
@@ -47,8 +47,7 @@
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAcAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-06T15:59:41.948Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Bookmark",
@@ -56,7 +55,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "RedditListener",
               "DocumentMoniker": "E:\\RedditListener\\RedditListener\\RedditListener.csproj",
               "RelativeDocumentMoniker": "RedditListener\\RedditListener.csproj",
@@ -68,13 +67,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "config.json",
               "DocumentMoniker": "E:\\RedditListener\\RedditListener\\config.json",
               "RelativeDocumentMoniker": "RedditListener\\config.json",
               "ToolTip": "E:\\RedditListener\\RedditListener\\config.json",
               "RelativeToolTip": "RedditListener\\config.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAANAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAATAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2024-08-12T15:47:42.095Z",
               "EditorCaption": ""
@@ -89,8 +88,7 @@
               "RelativeToolTip": "RedditListener\\classes\\RedditAPIUtility.cs",
               "ViewState": "AQIAAAsAAAAAAAAAAAAxwBgAAAAiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-12T15:40:13.751Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-12T15:40:13.751Z"
             },
             {
               "$type": "Document",
@@ -102,18 +100,17 @@
               "RelativeToolTip": "RedditListener\\classes\\RedditPost.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-12T15:35:29.918Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-12T15:35:29.918Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "RedditListenerTests.cs",
               "DocumentMoniker": "E:\\RedditListener\\RedditListener\\tests\\RedditListenerTests.cs",
               "RelativeDocumentMoniker": "RedditListener\\tests\\RedditListenerTests.cs",
               "ToolTip": "E:\\RedditListener\\RedditListener\\tests\\RedditListenerTests.cs",
               "RelativeToolTip": "RedditListener\\tests\\RedditListenerTests.cs",
-              "ViewState": "AQIAABIAAAAAAAAAAAA1wCUAAAAxAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB0AAABXAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-12T15:13:48.814Z",
               "EditorCaption": ""

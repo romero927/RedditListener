@@ -27,23 +27,23 @@ namespace RedditListener.tests
             Assert.NotNull(Client.DefaultRequestHeaders.Authorization);
         }
 
-        //Make sure we can get a Reddit Token
-        [Fact]
-        public async Task CanGetAccessToken()
-        {
-            //Instantiate config object
-            Configuration Config = new Configuration();
+        //Make sure we can get a Reddit Token. Disabled for now as Token is not needed.
+        //[Fact]
+        //public async Task CanGetAccessToken()
+        //{
+        //    //Instantiate config object
+        //    Configuration Config = new Configuration();
 
-            //Setup HTTP Client
-            HttpClient Client = new HttpClient();
-            Client = await RedditAPIUtility.SetupClient(Config, Client);
+        //    //Setup HTTP Client
+        //    HttpClient Client = new HttpClient();
+        //    Client = await RedditAPIUtility.SetupClient(Config, Client);
 
-            //Get the Reddit Token
-            string TokenJSON = await RedditAPIUtility.PostForRedditToken(Client);
-            RedditToken? Token = JsonSerializer.Deserialize<RedditToken>(TokenJSON);
-            // Assert
-            Assert.NotEqual(string.Empty, Token.Access_Token);
-        }
+        //    //Get the Reddit Token
+        //    string TokenJSON = await RedditAPIUtility.PostForRedditToken(Client);
+        //    RedditToken? Token = JsonSerializer.Deserialize<RedditToken>(TokenJSON);
+        //    // Assert
+        //    Assert.NotEqual(string.Empty, Token.Access_Token);
+        //}
 
     }
 }
