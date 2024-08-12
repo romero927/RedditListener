@@ -1,6 +1,6 @@
 {
   "AuthenticationString": "<APP ID GOES HERE>",
-  "UserAgent": "kgromerov1.1.0.0",
+  "UserAgent": "kgromerov1.2.0.1",
   "SubRedditsToMonitor": [
     "askreddit",
     "worldnews",
