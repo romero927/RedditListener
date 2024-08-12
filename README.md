@@ -20,17 +20,17 @@ Your app should also provide some way to report these values to a user (periodic
 
 # Configuration
 - The file config.json is used for configuration
-  - authenticationString: What is our Reddit App ID? Used to get Token
-  - userAgent: What is my custom user agent?
-  - subRedditsToMonitor: What subreddits do I want to monitor?
-  - numberOfPostsToTrack: How many posts do I want to show for each subreddit? (Top #)
-  - numberOfAuthorsToTrack: How many Authors do I want to show for each subreddit? (Top #)
+  - AuthenticationString: What is our Reddit App ID? Used to get Token
+  - UserAgent: What is my custom user agent?
+  - SubRedditsToMonitor: What subreddits do I want to monitor?
+  - NumberOfPostsToTrack: How many posts do I want to show for each subreddit? (Top #)
+  - NumberOfAuthorsToTrack: How many Authors do I want to show for each subreddit? (Top #)
   - Mode: 
     - new = Look at all posts made from the point that the app was started and calculate the top NumberOfPostsToTrack and NumberOfAuthorsToTrack from those posts.
       - This uses the new.json listing and will page backwards through the listing data slices until it finds the first post that was created after start.
       - Time between requests will slow down over time as the number of pages you have to go through increases, as each page uses a request.
     - top = Look at the top posts listing and calculate the top NumberOfPostsToTrack and NumberOfAuthorsToTrack from those posts. Looks at current top 100.
-  - maxDegreeOfParallelism: How many parallel threads can run at once?
+  - MaxDegreeOfParallelism: How many parallel threads can run at once?
   - SetFrom: Where is the config coming from? Config file or Default? Only uses default if there is a problem using the file.
 
 # General Logic Flow
