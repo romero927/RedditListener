@@ -31,6 +31,7 @@ Your app should also provide some way to report these values to a user (periodic
       - Time between requests will slow down over time as the number of pages you have to go through increases, as each page uses a request.
     - top = Look at the top posts listing and calculate the top NumberOfPostsToTrack and NumberOfAuthorsToTrack from those posts. Looks at current top 100.
   - maxDegreeOfParallelism: How many parallel threads can run at once?
+  - SetFrom: Where is the config coming from? Config file or Default? Only uses default if there is a problem using the file.
 
 # General Logic Flow
 - Start App
