@@ -1,6 +1,6 @@
 {
-  "AuthenticationString": "wvt61DreZ7zECSW0U8RpJw",
-  "UserAgent": "kgromerov1.2.0.1",
+  "AuthenticationString": "<API KEY HERE>",
+  "UserAgent": "<AGENT HERE>",
   "SubRedditsToMonitor": [
     "askreddit",
     "worldnews",
